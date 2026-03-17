@@ -1,4 +1,8 @@
 namespace university;
+
+using { university.Studies }  from './studies';
+using { university.Modules }  from './modules';
+
 entity Students{
     @UI.Hidden
     key userID : UUID;
@@ -13,5 +17,5 @@ entity Students{
     study : Association to university.Studies;
 
     @title: 'Modules Attended'
-    modules : Association to university.Modules;
+    modules : Association to many university.Modules;
 }

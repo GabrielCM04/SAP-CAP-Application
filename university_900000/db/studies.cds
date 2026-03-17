@@ -1,4 +1,8 @@
 namespace university;
+
+using { university.Modules }  from './modules';
+using { university.Students } from './students';
+
 entity Studies{
     @UI.Hidden
     key subjectID : UUID;

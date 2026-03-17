@@ -1,4 +1,8 @@
 namespace university;
+
+using { university.Students } from './students';
+using { university.Studies }  from './studies';
+
 entity Modules{
     @UI.Hidden
     key moduleID : UUID;
@@ -34,5 +38,5 @@ entity Modules{
     additionalInfo : String;
 
     @title: 'Assignments'
-    assignments : Association to university.Students;
+    assignments : Association to many university.Students;
 }
