@@ -1,6 +1,6 @@
 namespace university;
 
-using { university.Students } from './students';
+
 using { university.Studies }  from './studies';
 
 entity Modules{
@@ -38,5 +38,10 @@ entity Modules{
     additionalInfo : String;
 
     @title: 'Assignments'
-    assignments : Association to many university.Students;
+    assignments : Association to many Module_Assignments on assignments.module = $self;
+}
+
+entity Module_Assignments {
+    key student : Association to university.Students;
+    key module : Association to Modules; 
 }
